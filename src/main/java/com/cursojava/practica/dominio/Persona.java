@@ -1,10 +1,19 @@
 package com.cursojava.practica.dominio;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "PERSONA")
 public class Persona {
     
+    @Id
+    @Column(name = "id")
     private String id;
+    @Column(name="name")
     private String name;
+    @Column(name="age")
     private int age;
+    @Column(name="alive")
     private boolean alive;
 
 

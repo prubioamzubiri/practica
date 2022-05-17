@@ -1,8 +1,5 @@
 package com.cursojava.practica.application;
 
-
-
-
 import com.cursojava.practica.persistencia.*;
 
 import org.springframework.context.annotation.Bean;
