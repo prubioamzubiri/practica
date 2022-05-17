@@ -3,7 +3,7 @@ package com.cursojava.practica.application;
 import com.cursojava.practica.dominio.Persona;
 import com.cursojava.practica.persistencia.*;
 
-public class PersonaApplication implements IPersonaAplication{
+public class PersonaApplication implements IPersonaApplication{
 
     private IPersonaGBD GBD;
 

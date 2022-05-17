@@ -18,9 +18,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/persona")
 public class PersonaController {
 
-    private final IPersonaAplication repository;
+    private final IPersonaApplication repository;
 
-    PersonaController(IPersonaAplication repository) throws InvalidAttributeValueException, NumberFormatException, IOException {
+    PersonaController(IPersonaApplication repository) throws InvalidAttributeValueException, NumberFormatException, IOException {
       this.repository = repository;
     }
 

@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Bean;
 public class ApplicationBeanConfiguration {
 
     @Bean
-    IPersonaAplication getPersonaAplication(IPersonaGBD iPersonaGBD)
+    IPersonaApplication getPersonaAplication(IPersonaGBD iPersonaGBD)
     {
         return new PersonaApplication(iPersonaGBD);
     }
