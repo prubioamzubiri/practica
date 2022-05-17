@@ -24,42 +24,44 @@ public class PersistenceBeanConfiguration {
    
     
     @Bean
-    IPersonaGBD getIPersonaGDB(Session s) throws InvalidAttributeValueException, NumberFormatException, IOException
+    IPersonaGBD getIPersonaGDB() throws InvalidAttributeValueException, NumberFormatException, IOException
     {
-      return new HibernatePersonaDB(s);
+      File f = new File("datos.txt");
+      
+      return new TextBD(f);
     }
 
 
-    @Bean
-    Session getSession()
-    {
-      Configuration cfg = new Configuration();
+    // @Bean
+    // Session getSession()
+    // {
+    //   Configuration cfg = new Configuration();
 
-      String connectionURL;
+    //   String connectionURL;
 
-      // -Ddbhost=host -Ddbport=port -Ddbdatabase=databasename
-      // String host = (System.getProperty("dbhost")==null)? "127.0.0.1":System.getProperty(data);
-      String host = getProperty("dbhost", "127.0.0.1");
-      String port = getProperty("dbport","3306");
-      String database = getProperty("dbdatabase","database1");
+    //   // -Ddbhost=host -Ddbport=port -Ddbdatabase=databasename
+    //   // String host = (System.getProperty("dbhost")==null)? "127.0.0.1":System.getProperty(data);
+    //   String host = getProperty("dbhost", "127.0.0.1");
+    //   String port = getProperty("dbport","3306");
+    //   String database = getProperty("dbdatabase","database1");
 
-      connectionURL = "jdbc:mysql://" + host + ":" + port + "/" + database;
-      cfg.setProperty("hibernate.connection.url", connectionURL);
+    //   connectionURL = "jdbc:mysql://" + host + ":" + port + "/" + database;
+    //   cfg.setProperty("hibernate.connection.url", connectionURL);
 
-      // -Ddbuser=user
-      String user = getProperty("dbuser", "root");
-      cfg.setProperty("hibernate.connection.username", user);
+    //   // -Ddbuser=user
+    //   String user = getProperty("dbuser", "root");
+    //   cfg.setProperty("hibernate.connection.username", user);
 
-      //-Ddbpassword=password
-      String password = getProperty("dbpassword","root");
-      cfg.setProperty("hibernate.connection.password", password);
+    //   //-Ddbpassword=password
+    //   String password = getProperty("dbpassword","root");
+    //   cfg.setProperty("hibernate.connection.password", password);
 
-      SessionFactory factory = cfg.configure().addAnnotatedClass(Persona.class).buildSessionFactory();
+    //   SessionFactory factory = cfg.configure().addAnnotatedClass(Persona.class).buildSessionFactory();
 
-      Session session = factory.openSession();
+    //   Session session = factory.openSession();
 
-      return session;
-    }
+    //   return session;
+    // }
 
     
 
