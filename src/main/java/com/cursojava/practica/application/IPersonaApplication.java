@@ -2,7 +2,7 @@ package com.cursojava.practica.application;
 
 import com.cursojava.practica.dominio.Persona;
 
-public interface IPersonaAplication {
+public interface IPersonaApplication {
 
     public void addPersona(Persona p);
 
