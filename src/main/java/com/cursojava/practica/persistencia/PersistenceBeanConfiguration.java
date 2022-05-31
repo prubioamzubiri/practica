@@ -32,36 +32,36 @@ public class PersistenceBeanConfiguration {
     }
 
 
-    // @Bean
-    // Session getSession()
-    // {
-    //   Configuration cfg = new Configuration();
 
-    //   String connectionURL;
+    Session getSession()
+    {
+      Configuration cfg = new Configuration();
 
-    //   // -Ddbhost=host -Ddbport=port -Ddbdatabase=databasename
-    //   // String host = (System.getProperty("dbhost")==null)? "127.0.0.1":System.getProperty(data);
-    //   String host = getProperty("dbhost", "127.0.0.1");
-    //   String port = getProperty("dbport","3306");
-    //   String database = getProperty("dbdatabase","database1");
+      String connectionURL;
 
-    //   connectionURL = "jdbc:mysql://" + host + ":" + port + "/" + database;
-    //   cfg.setProperty("hibernate.connection.url", connectionURL);
+      // -Ddbhost=host -Ddbport=port -Ddbdatabase=databasename
+      // String host = (System.getProperty("dbhost")==null)? "127.0.0.1":System.getProperty(data);
+      String host = getProperty("dbhost", "127.0.0.1");
+      String port = getProperty("dbport","3306");
+      String database = getProperty("dbdatabase","database1");
 
-    //   // -Ddbuser=user
-    //   String user = getProperty("dbuser", "root");
-    //   cfg.setProperty("hibernate.connection.username", user);
+      connectionURL = "jdbc:mysql://" + host + ":" + port + "/" + database;
+      cfg.setProperty("hibernate.connection.url", connectionURL);
 
-    //   //-Ddbpassword=password
-    //   String password = getProperty("dbpassword","root");
-    //   cfg.setProperty("hibernate.connection.password", password);
+      // -Ddbuser=user
+      String user = getProperty("dbuser", "root");
+      cfg.setProperty("hibernate.connection.username", user);
 
-    //   SessionFactory factory = cfg.configure().addAnnotatedClass(Persona.class).buildSessionFactory();
+      //-Ddbpassword=password
+      String password = getProperty("dbpassword","root");
+      cfg.setProperty("hibernate.connection.password", password);
 
-    //   Session session = factory.openSession();
+      SessionFactory factory = cfg.configure().addAnnotatedClass(Persona.class).buildSessionFactory();
 
-    //   return session;
-    // }
+      Session session = factory.openSession();
+
+      return session;
+    }
 
     
 
