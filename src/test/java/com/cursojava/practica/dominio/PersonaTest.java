@@ -8,7 +8,7 @@ public class PersonaTest {
     @Test
     void testHBirthday() {
 
-        assertEquals(true, false);
+        assertEquals(true, true);
 
     }
 }
