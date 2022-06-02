@@ -32,7 +32,6 @@ public class PersistenceBeanConfiguration {
     }
 
 
-
     Session getSession()
     {
       Configuration cfg = new Configuration();
@@ -41,6 +40,7 @@ public class PersistenceBeanConfiguration {
 
       // -Ddbhost=host -Ddbport=port -Ddbdatabase=databasename
       // String host = (System.getProperty("dbhost")==null)? "127.0.0.1":System.getProperty(data);
+
       String host = getProperty("dbhost", "127.0.0.1");
       String port = getProperty("dbport","3306");
       String database = getProperty("dbdatabase","database1");
@@ -63,7 +63,6 @@ public class PersistenceBeanConfiguration {
       return session;
     }
 
-    
 
     private String getProperty(String data, String defaultValue){
         String info = System.getProperty(data);
