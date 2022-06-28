@@ -38,7 +38,8 @@ public class Persona {
     {
         if(alive)
         {
-            //age++;
+            age++;
+
         }
     }
 
