@@ -1,9 +1,6 @@
 name: ci_junit_maven
 
-on:
-  push:
-    branches:
-      - configurar-ci
+on: pull_request
 
 jobs:
   Unit_Tests:
@@ -17,6 +14,6 @@ jobs:
         # The Java version to set up. Takes a whole or semver Java version. See examples of supported syntax in README file
         java-version: 1.13
     - run: mvn package -DskipTests
-    - run: mvn test
+    - run: mvn verify
 
 
