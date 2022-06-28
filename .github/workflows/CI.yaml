@@ -1,0 +1,13 @@
+name: ci
+
+on:
+  push:
+    branches:
+      - configurar-ci
+
+jobs:
+  Unit_Tests:
+    name: Unit tests
+    runs-on: ubuntu-latest
+    steps:
+    - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
