@@ -16,6 +16,7 @@ jobs:
       with:
         # The Java version to set up. Takes a whole or semver Java version. See examples of supported syntax in README file
         java-version: 1.13
+    - run: mvn package -DskipTests
     - run: mvn test
 
 
