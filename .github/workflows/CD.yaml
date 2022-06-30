@@ -3,7 +3,7 @@ name: Continous Deployment
 on:
   push:
     branches:
-      - "cd"
+      - "master"
 
 jobs:
   Continous_deployment:
