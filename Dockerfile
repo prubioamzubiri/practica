@@ -4,7 +4,7 @@ COPY ./target/*.jar app.jar
 
 COPY ./datos.txt datos.txt
 
-COPY ./entrypoint.sh ./entrypoint.sh
+COPY ./entrypoint.sh entrypoint.sh
 
 EXPOSE 8080
  
