@@ -6,6 +6,8 @@ COPY ./datos.txt datos.txt
 
 COPY ./entrypoint.sh entrypoint.sh
 
+RUN chmod u+x ./entrypoint.sh
+
 EXPOSE 8080
  
 ENTRYPOINT ["/bin/sh", "-c", "./entrypoint.sh"]
