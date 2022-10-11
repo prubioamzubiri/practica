@@ -75,5 +75,6 @@ jobs:
           username: ubuntu
           key: ${{ secrets.SSH }}
           script: sudo docker stop ${{secrets.proyect_name}} |
-                  sudo docker remove ${{secrets.proyect_name}} |
+                  wait |
+                  sudo docker rm ${{secrets.proyect_name}} |
                   sudo docker run -d --name=${{secrets.proyect_name}} -p 8080:8080 ${{secrets.dockerhub_username}}/${{secrets.proyect_name}}:${{ env.RELEASE_VERSION }}
