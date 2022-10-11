@@ -76,7 +76,7 @@ jobs:
           username: ubuntu
           key: ${{ secrets.SSH }}
           script: |
-                  sudo docker stop thisDocker
-                  sudo docker rm thisDocker
+                  sudo docker stop ${{secrets.proyect_name}}
+                  sudo docker rm ${{secrets.proyect_name}}
                   sudo docker rmi ${{secrets.dockerhub_username}}/${{secrets.proyect_name}}:${{ env.RELEASE_VERSION }}
                   sudo docker run -d --name=thisDocker -p 8080:8080 ${{secrets.dockerhub_username}}/${{secrets.proyect_name}}:${{ env.RELEASE_VERSION }}
