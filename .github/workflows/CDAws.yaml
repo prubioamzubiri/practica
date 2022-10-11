@@ -12,6 +12,7 @@
 #       java-version: 1.13
 #       target docker ports: -p 8080:8080
 #       "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+#       docker name = thisDocker
 
 
 name: Continous Deployment Docker
@@ -77,4 +78,5 @@ jobs:
           script: |
                   sudo docker stop thisDocker
                   sudo docker rm thisDocker
+                  sudo docker rmi ${{secrets.dockerhub_username}}/${{secrets.proyect_name}}:${{ env.RELEASE_VERSION }}
                   sudo docker run -d --name=thisDocker -p 8080:8080 ${{secrets.dockerhub_username}}/${{secrets.proyect_name}}:${{ env.RELEASE_VERSION }}
