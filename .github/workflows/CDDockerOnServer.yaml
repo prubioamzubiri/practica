@@ -5,6 +5,7 @@
 #       target ssh host: ${{ secrets.HOST }}
 #       proyect name: ${{secrets.proyect_name}}
 #       target host ssh private key: ${{ secrets.SSH }}
+#
 
 ################### DEFAULT VALUES ##################################
 #
@@ -12,6 +13,12 @@
 #       (line 44) java-version: 1.13
 #       (line 81) target docker ports: -p 8080:8080
 #       (line 38) "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+
+################## REQUISITOS DEL SERVIDOR ###############################
+#
+#       Tener instalado:
+#           docker
+#           docker.io
 
 ###################### ACTION ########################################
 name: Continous Deployment Docker
